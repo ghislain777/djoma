@@ -1,0 +1,27 @@
+RewriteEngine on
+RewriteBase /
+RewriteCond %{HTTP_HOST} ^(djomatv.)?zentechnologies.net$
+RewriteCond %{REQUEST_URI} !^/frontend/build/
+RewriteCond %{REQUEST_URI} !^/api/
+RewriteCond %{REQUEST_URI} !^/fichiers/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /frontend/build/$1 [L]
+
+RewriteCond %{HTTP_HOST} ^(djomatv.)?zentechnologies.net$
+RewriteCond %{REQUEST_URI} ^/api/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /backend/public/$1 [L]
+
+
+RewriteCond %{HTTP_HOST} ^(djomatv.)?zentechnologies.net$
+RewriteCond %{REQUEST_URI} ^/fichiers/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /backend/public/$1 [L]
+
+RewriteCond %{HTTP_HOST} ^(djomatv.)?zentechnologies.net$
+RewriteRule ^(/)?$ frontend/build/index.html
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ /frontend/build/index.html [L]

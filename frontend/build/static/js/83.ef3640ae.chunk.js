@@ -1,0 +1,1 @@
+(this["webpackJsonpmatx-react-pro"]=this["webpackJsonpmatx-react-pro"]||[]).push([[83],{3088:function(e,t,n){"use strict";n.r(t),n.d(t,"default",(function(){return c}));var r=n(0),a=n.n(r);function c(){return a.a.createElement(a.a.Fragment,null,a.a.createElement("div",null,"Audit des recherches"))}}}]);
