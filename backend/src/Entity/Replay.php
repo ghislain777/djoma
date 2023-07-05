@@ -80,6 +80,12 @@ class Replay
      */
     private $video;
 
+
+    public function __construct() {
+        $this->setYoutube(true);
+    }
+
+
     public function getId(): ?int
     {
         return $this->id;
